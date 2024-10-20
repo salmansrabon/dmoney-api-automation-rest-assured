@@ -14,8 +14,8 @@ import utils.Utils;
 import static io.restassured.RestAssured.given;
 
 public class TestRunner extends Setup {
-    //@Test(priority = 1, description = "User Login")
-    public void doLogin() throws ConfigurationException {
+    @Test(priority = 1, description = "User Login")
+    public void doLogin() throws ConfigurationException, InterruptedException {
         UserController userController=new UserController(prop);
         UserModel model=new UserModel();
         model.setEmail("admin@roadtocareer.net");
@@ -27,6 +27,7 @@ public class TestRunner extends Setup {
         String token= jsonObj.get("token");
         System.out.println(token);
         Utils.setEnvVar("token",token);
+        Thread.sleep(3000);
     }
     @Test(priority = 2, description = "Create new user")
     public void createUser() throws ConfigurationException {
