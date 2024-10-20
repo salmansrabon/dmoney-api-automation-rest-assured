@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="Dmoney automation">
+    <test name="Dmoney automation">
+        <classes>
+            <class name="testrunner.TestRunner"></class>
+        </classes>
+    </test>
+
+</suite>
