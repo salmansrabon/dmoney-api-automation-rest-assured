@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '5.4.0'
+    implementation group: 'commons-configuration', name: 'commons-configuration', version: '1.10'
+    testImplementation group: 'org.testng', name: 'testng', version: '7.10.2'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.16.1'
+    testCompileOnly 'org.projectlombok:lombok:1.18.34'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.34'
+    // https://mvnrepository.com/artifact/com.github.javafaker/javafaker
+    implementation group: 'com.github.javafaker', name: 'javafaker', version: '1.0.2'
+
+    // https://mvnrepository.com/artifact/com.google.auth/google-auth-library-oauth2-http
+    implementation group: 'com.google.auth', name: 'google-auth-library-oauth2-http', version: '1.28.0'
+    // https://mvnrepository.com/artifact/com.google.api-client/google-api-client
+    implementation group: 'com.google.api-client', name: 'google-api-client', version: '2.7.0'
+
+
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
